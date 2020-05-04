@@ -609,9 +609,9 @@ async def task():
 								bossFlag0[i] = False
 								bossMungFlag[i] = False
 								bossMungCnt[i] = 0
-								await client.get_channel(channel).send('```자동 멍처리 횟수 ' + basicSetting[17] + '회 초과! [' + bossData[i][0] + '] 삭제!```', tts=False)
+								await client.get_channel(channel).send('```자동 미입력 횟수 ' + basicSetting[17] + '회 초과! [' + bossData[i][0] + '] 삭제!```', tts=False)
 								#await dbSave()
-								print ('자동멍처리 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
+								print ('자동미입력 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
 							else:
 								################ 미입력 보스 ################
 								if bossData[i][2] == '0':
@@ -638,7 +638,7 @@ async def task():
 									tmp_bossTime[i] = bossTime[i] = nextTime = tmp_bossTime[i]+datetime.timedelta(hours=int(bossData[i][1]), minutes=int(bossData[i][5]))
 									tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 									tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
-									await client.get_channel(channel).send("```" + bossData[i][0] + ' 멍 입니다.```')
+									await client.get_channel(channel).send("```" + bossData[i][0] + ' 미입력 됐습니다.```')
 									embed = discord.Embed(
 										description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 										color=0xff0000
@@ -949,7 +949,7 @@ async def on_ready():
 
 	# 디스코드에는 현재 본인이 어떤 게임을 플레이하는지 보여주는 기능이 있습니다.
 	# 이 기능을 사용하여 봇의 상태를 간단하게 출력해줄 수 있습니다.
-	await client.change_presence(status=discord.Status.oline, activity=discord.Game(name='V4'), afk=False)
+	await client.change_presence(status=discord.Status.oline, activity=discord.Game(name='V4', afk=False)
 
 while True:
 	################ 보탐봇 입장 ################ 	

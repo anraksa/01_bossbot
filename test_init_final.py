@@ -601,8 +601,8 @@ async def task():
 									await client.get_channel(channel).send(f'```자동 미입력 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] 삭제!```', tts=False)
 									print ('자동미입력 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
 								else:
-									await client.get_channel(channel).send(f'```자동 멍처리 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] 삭제!```', tts=False)
-									print ('자동멍처리 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
+									await client.get_channel(channel).send(f'```자동 미입력 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] 삭제!```', tts=False)
+									print ('자동 미입력 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
 								#await dbSave()
 								
 							else:
@@ -1034,7 +1034,7 @@ async def on_ready():
 
 	# 디스코드에는 현재 본인이 어떤 게임을 플레이하는지 보여주는 기능이 있습니다.
 	# 이 기능을 사용하여 봇의 상태를 간단하게 출력해줄 수 있습니다.
-	await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name=command[1][0], type=1), afk=False)
+	await client.change_presence(status=discord.Status.oline, activity=discord.Game(name='V4', type=1), afk=False)
 
 while True:
 	################ 보탐봇 입장 ################ 	
